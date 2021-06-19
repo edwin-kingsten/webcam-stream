@@ -5,7 +5,7 @@ const canvas = document.querySelector("canvas");
 const video = document.querySelector("video");
 const ctx = canvas.getContext("2d");
 
-const socket = io(); // TODO: SERVER URL HERE
+const socket = io("http://18.119.12.9:5000/"); // TODO: SERVER URL HERE
 
 navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((d) => {
   console.log(d);
