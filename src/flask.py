@@ -6,7 +6,7 @@ import eventlet
 import socketio
 
 sio = socketio.Server()
-app = socketio.WSGIApp(sio)
+app = socketio.WSGIApp(sio , cors_allowed_origins="*")
 
 @sio.event
 def connect(sid, environ):
@@ -14,8 +14,8 @@ def connect(sid, environ):
 
 @sio.event
 def image(sid, data):
-  # HERE you will get the image
-  pass
+  print(data)
+  
 
 @sio.event
 def disconnect(sid):
