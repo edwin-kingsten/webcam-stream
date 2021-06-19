@@ -15,6 +15,7 @@ def connect(sid, environ):
 @sio.event
 def image(sid, data):
   # HERE you will get the image
+  pass
 
 @sio.event
 def disconnect(sid):
