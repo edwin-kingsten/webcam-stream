@@ -5,8 +5,8 @@
 import eventlet
 import socketio
 
-sio = socketio.Server()
-app = socketio.WSGIApp(sio , cors_allowed_origins="*")
+sio = socketio.Server(cors_allowed_origins='*')
+app = socketio.WSGIApp(sio)
 
 @sio.event
 def connect(sid, environ):
