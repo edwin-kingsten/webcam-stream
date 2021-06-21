@@ -14,7 +14,7 @@ def connect(sid, environ):
 
 @sio.event
 def image(sid, data):
-  print(data)
+  sio.emit('image1', {'data': data})
   
 
 @sio.event
