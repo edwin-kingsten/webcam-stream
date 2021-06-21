@@ -4,6 +4,7 @@
 
 import eventlet
 import socketio
+import json
 
 sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio)
@@ -14,7 +15,8 @@ def connect(sid, environ):
 
 @sio.event
 def image(sid, data):
-  sio.emit('image1', {'data': data})
+    d = json.dump({'data': data})
+    sio.emit('image1', d)
   
 
 @sio.event
