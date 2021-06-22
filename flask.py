@@ -10,6 +10,7 @@ sio = socketio.Server(cors_allowed_origins='*')
 # app = socketio.WSGIApp(sio , static_files={
 #     '/': {'content_type': 'text/html', 'filename': 'index.html'}
 # })
+flag = True
 app = socketio.WSGIApp(sio)
 
 @sio.event
@@ -19,8 +20,10 @@ def connect(sid, environ):
 @sio.event
 def image(sid, data):
     try:
-        print(data)
-        d = json.dump({'data': data})
+        if flag:
+            print(data)
+            flag = False
+        d = json.dumps({'data': data})
         sio.emit('image1', d)
         
     except Exception as e:
