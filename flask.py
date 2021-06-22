@@ -19,11 +19,12 @@ def connect(sid, environ):
 @sio.event
 def image(sid, data):
     try:
+        print(data)
+        raise KeyboardInterrupt
         d = json.dumps({'data': data})
         sio.emit('image1', d)
         
     except Exception as e:
-        print(data)
         print(e)
   
 
