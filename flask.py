@@ -20,6 +20,8 @@ def connect(sid, environ):
 def image(sid, data):
     try:
         print(data)
+        with open("data.txt" , w+) as f:
+            f.write(data)
         raise KeyboardInterrupt
         d = json.dumps({'data': data})
         sio.emit('image1', d)
