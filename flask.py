@@ -7,9 +7,10 @@ import socketio
 import json
 
 sio = socketio.Server(cors_allowed_origins='*')
-app = socketio.WSGIApp(sio , static_files={
-    '/': {'content_type': 'text/html', 'filename': 'index.html'}
-})
+# app = socketio.WSGIApp(sio , static_files={
+#     '/': {'content_type': 'text/html', 'filename': 'index.html'}
+# })
+app = socketio.WSGIApp(sio)
 
 @sio.event
 def connect(sid, environ):
