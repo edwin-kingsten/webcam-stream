@@ -19,6 +19,7 @@ def connect(sid, environ):
 @sio.event
 def image(sid, data):
     try:
+        print(data)
         d = json.dump({'data': data})
         sio.emit('image1', d)
         
