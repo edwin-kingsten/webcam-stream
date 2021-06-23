@@ -20,12 +20,9 @@ def connect(sid, environ):
 
 @sio.event
 def image(sid, data):
-    # print(data)
-    # with open("data.txt" , w+) as f:
-    # f.write(data)
     try:
-        d = json.dumps({'data': data})
-        print(d)
+        d = json.dumps({'data': data.data})
+        # print(d)
         sio.emit('image1', d)
     except Exception as e:
         print(e)

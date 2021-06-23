@@ -63,6 +63,6 @@ function animate() {
 socket.on('image1', (d) => {
   const {data} = JSON.parse(d);
    const img = document.querySelector("img");
-    img.src = data.data
+    img.src = data
 
 })
