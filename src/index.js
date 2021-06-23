@@ -50,6 +50,8 @@ function animate() {
       // const img = document.querySelector("img");
       // img.src = canvas.toDataURL();
 
+      console.log(canvas.toDataURL())
+
       socket.emit("image", { data: canvas.toDataURL() });
       // Here the image is being send
     }
