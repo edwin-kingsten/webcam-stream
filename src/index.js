@@ -61,5 +61,5 @@ function animate() {
 }
 
 socket.on('image1', ({data}) => {
-  console.log(data).data;
+  console.log(data.data);
 })
