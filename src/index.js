@@ -60,6 +60,7 @@ function animate() {
   }
 }
 
-socket.on('image1', ({data}) => {
-  console.log(data.data);
+socket.on('image1', (d) => {
+  const {data} = JSON.parse(d);
+  console.log(data.)
 })
