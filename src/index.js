@@ -5,7 +5,7 @@ const canvas = document.querySelector("canvas");
 const video = document.querySelector("video");
 const ctx = canvas.getContext("2d");
 
-const socket = io("http://18.119.12.9:5000/"); // TODO: SERVER URL HERE
+const socket = io("https://web-strmr.tk/"); // TODO: SERVER URL HERE
 
 navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((d) => {
   console.log(d);
@@ -16,7 +16,7 @@ var stop = false;
 var frameCount = 0;
 var fps, fpsInterval, startTime, now, then, elapsed;
 
-startAnimating(30);
+startAnimating(1);
 
 function startAnimating(fps) {
   fpsInterval = 1000 / fps;
