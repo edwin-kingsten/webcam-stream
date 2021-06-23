@@ -12,27 +12,29 @@ sio = socketio.Server(cors_allowed_origins='*')
 # })
 app = socketio.WSGIApp(sio)
 
+
 @sio.event
 def connect(sid, environ):
     print('connect ', sid)
 
+
 @sio.event
 def image(sid, data):
+    # print(data)
+    # with open("data.txt" , w+) as f:
+    # f.write(data)
     try:
-        print(data)
-        with open("data.txt" , w+) as f:
-            f.write(data)
-        raise KeyboardInterrupt
         d = json.dumps({'data': data})
+        print(d)
         sio.emit('image1', d)
-        
     except Exception as e:
         print(e)
-  
+
 
 @sio.event
 def disconnect(sid):
     print('disconnect ', sid)
 
+
 if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
+    eventlet.wsgi.server(eventlet.listen(('0.0.0.0', 80)), app)
