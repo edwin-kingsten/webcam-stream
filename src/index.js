@@ -25,7 +25,7 @@ function startAnimating(fps) {
   console.log(startTime);
   animate();
 }
-n
+
 function animate() {
   if (stop) {
     return;
