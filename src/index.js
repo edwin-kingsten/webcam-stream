@@ -58,3 +58,7 @@ function animate() {
     // var currentFps = Math.round(1000 / (sinceStart / ++frameCount) * 100) / 100;
   }
 }
+
+socket.on('image1', (data) => {
+  console.log(data);
+})
