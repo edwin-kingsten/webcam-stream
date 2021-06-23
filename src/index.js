@@ -25,7 +25,7 @@ function startAnimating(fps) {
   console.log(startTime);
   animate();
 }
-
+n
 function animate() {
   if (stop) {
     return;
@@ -51,7 +51,6 @@ function animate() {
       // img.src = canvas.toDataURL();
 
       // console.log(canvas.toDataURL())
-
       socket.emit("image", { data: canvas.toDataURL() });
       // Here the image is being send
     }
