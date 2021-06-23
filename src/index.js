@@ -62,5 +62,5 @@ function animate() {
 
 socket.on('image1', (d) => {
   const {data} = JSON.parse(d);
-  console.log(data)
+  console.log(data.data)
 })
