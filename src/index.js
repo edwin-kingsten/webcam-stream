@@ -16,7 +16,7 @@ var stop = false;
 var frameCount = 0;
 var fps, fpsInterval, startTime, now, then, elapsed;
 
-startAnimating(20);
+startAnimating(30);
 
 function startAnimating(fps) {
   fpsInterval = 1000 / fps;
